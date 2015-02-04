@@ -1,24 +1,14 @@
 # GooglePlacesApi
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'google_places_api'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install google_places_api
+Super simple Google Places API client.
 
 ## Usage
 
-TODO: Write usage instructions here
+    client = GooglePlacesApi::Client.new(key: API_KEY)
+    response = client.get('textsearch', query: 'something')
+    ref = response.body.results.first.reference
+    client.get('details', reference: ref).body.result.name
+    client.get('nearbysearch', name: 'optional', language: 'nl', keywords: 'optional', location: "#{lat},#{lng}", radius: 100)
 
 ## Contributing
 
