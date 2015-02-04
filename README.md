@@ -1,8 +1,10 @@
 # GooglePlacesApi
 
-Super simple Google Places API client.
+Super simple Google Places API client for Ruby.
 
 ## Usage
+
+See https://developers.google.com/places/documentation.
 
     client = GooglePlacesApi::Client.new(key: API_KEY)
     response = client.get('textsearch', query: 'something')
